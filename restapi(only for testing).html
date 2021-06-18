@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+</head>
+<body>
+    <div id="main-div">
+        <input type="text" id="control_number">
+        <button type="button" onclick="getButton()">Get Button</button>
+        <button type="button" onclick="postButton()">Post Button</button>
+    </div>
+    <div id="content-div">
+    </div>
+</body>
+
+<script>
+
+    function getButton(){
+
+        
+        const xhttp = new XMLHttpRequest();
+
+        xhttp.onload = function() {
+            var content = "";
+            var obj = JSON.parse(this.responseText);
+            console.log(obj);
+        }
+
+        // Send a request
+        xhttp.open("GET", "http://localhost:8000/user/2021-00001", true);
+        xhttp.send();
+    }
+
+     function postButton(){
+        var control_number = document.getElementById("control_number").value;
+        console.log(control_number);
+
+        // Create an XMLHttpRequest object
+        const xhttp = new XMLHttpRequest();
+
+        // Define a callback function
+        xhttp.onload = function() {
+            var content = "";
+            var obj = JSON.parse(this.responseText);
+           console.log(obj);
+
+            if (obj.status_code == "SUCCESS"){
+                
+            }
+            else{
+
+            }
+
+            document.getElementById("content-div").innerHTML = content;
+        
+        }
+
+        // Send a request with parameters
+        xhttp.open("POST", "http://localhost:8000/user/create", true);
+        xhttp.setRequestHeader('Content-Type', 'application/json');
+        var params = {
+            email: "hello@gmail.com",
+            password: "12355",
+            first_name: "hello",
+            middle_name: "hi",
+            last_name: "Hello again",
+            is_student: 1,
+            year_level: 1
+        };
+        xhttp.send(JSON.stringify(params));
+    }
+
+    
+
+</script>
+</html>
