@@ -22,18 +22,24 @@
 
     <label for="lastname"><b>Last Name</b></label>
         <input type="text" placeholder="Please Enter Email (if no middle name, type _)" name="lastname" required id="_lastname">   
+
         
-    <select name="dropdown" onchange="selectCourse()">
+    <select id = "course">
         <option value="Select Course" selected>Select Course</option>
         <option value="BSIT">BSIT</option>
         <option value="BSCE">BSCE</option>
+        <option value ="BSCS">BSCS</option>
     </select>
         
-        <button type="button" onclick="validateForms()">Post Button</button>
+        <button type="button" onclick="enrollStudent()">Post Button</button>
         
         <button type="button" onclick="getButton()">Get Button</button>
 
         <div id="he"></div>
+
+        <div id="number">
+            <p>Hello</p>
+        </div>
 </body>
 
 <script src = "scripts/register.js"></script>
