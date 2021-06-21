@@ -39,92 +39,88 @@ console.log("HEHEH");
 
     function enrollStudent(){
    
-    var course = document.getElementById("course");
-    var strUser = course.value;
-        console.log(strUser);
+    // var course = document.getElementById("course");
+    // var strUser = course.value;
+    //     console.log(strUser);
        
-        var studentNumber = "";
-        var courseCode = "";
-        var subjects = [];
+    //     var studentNumber = "";
+    //     var courseCode = "";
+    //     var subjects = [];
 
-    if(strUser == "BSIT"){
+    // if(strUser == "BSIT"){
         
-        courseCode = "BSIT"
-        subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010", "CET 0121",
-         "NSTP 02", "EIT 0122", "ICC 0103.1", "ICC 0103"]
+    //     courseCode = "BSIT"
+    //     subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010", "CET 0121",
+    //      "NSTP 02", "EIT 0122", "ICC 0103.1", "ICC 0103"]
 
-    } else if(strUser == "BSCE"){
-        courseCode = "BSCE"
-        subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010", "CIV 0121.1",
-    "CET 0122A", "CET 0121", "NSTP 02", "EIT 0122"]
-    } 
+    // } else if(strUser == "BSCE"){
+    //     courseCode = "BSCE"
+    //     subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010", "CIV 0121.1",
+    // "CET 0122A", "CET 0121", "NSTP 02", "EIT 0122"]
+    // } 
     
-    else {
-        courseCode = "BSCS"
-        subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010",
-     "CET 0121", "NSTP 02", "EIT 0122", "ICC 0103.1", "ICC 0103"]
-    };
+    // else {
+    //     courseCode = "BSCS"
+    //     subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010",
+    //  "CET 0121", "NSTP 02", "EIT 0122", "ICC 0103.1", "ICC 0103"]
+    // };
       
        
     
     //  Create an XMLHttpRequest object
        const xhttp = new XMLHttpRequest();
 
+       console.log(password);
+
         // Define a callback function
         xhttp.onload = function() {
             var content = "";
             var obj = JSON.parse(this.responseText);
-            console.log(obj.message.first_name);
-            
-            var data = obj.message;
-            studentNumber = data.student_number;
-            console.log(studentNumber);
+            console.log(obj);
 
             if (obj.status_code == "SUCCESS"){
                 // window.location = "../Webpage/mainpage.html";
+                console.log("Success");
                 }
                 else{
-    
+                    console.log("failed");
                 }
     
-                document.getElementById("content-div").innerHTML = content;
             
             }
 
             
     
-//             // Send a request with parameters
-//             xhttp.open("POST", "http://localhost:8000/user/create", true);
-//             xhttp.setRequestHeader('Content-Type', 'application/json');
-//             var params = {
-//                 email: email,
-//                 password: password,
-//                 first_name: firstname,
-//                 middle_name: middlename,
-//                 last_name: lastname,
-//                 is_student: defaultValue,
-//                 year_level: defaultValue
-//             };
-//             xhttp.send(JSON.stringify(params));
+             // Send a request with parameters
+            xhttp.open("POST", "http://localhost:8000/user/create", true);
+            xhttp.setRequestHeader('Content-Type', 'application/json');
+            var params = {
+                email: email,
+                password: password,
+                first_name: firstname,
+                middle_name: middlename,
+                last_name: lastname,
+                is_student: defaultValue,
+                year_level: defaultValue
+            };
+            xhttp.send(JSON.stringify(params));
           
 
-            xhttp.open("GET", "http://localhost:8000/user/2021-00001", true);
-            xhttp.send();
+            // xhttp.open("GET", "http://localhost:8000/user/2021-00001", true);
+            // xhttp.send();
             
            
-            xhttp.open("POST", "http://localhost:8000/enrollment/create", true);
-            xhttp.setRequestHeader('Content-Type', 'application/json');
-            var enrollParams = {
-                student_number: obj.message.student_number,
-                course_code: courseCode,
-                subjects: subjects
-            };
-            xhttp.send(JSON.stringify(enrollParams));
+            // xhttp.open("POST", "http://localhost:8000/enrollment/create", true);
+            // xhttp.setRequestHeader('Content-Type', 'application/json');
+            // var enrollParams = {
+            //     student_number: obj.message.student_number //error-part,
+            //     course_code: courseCode,
+            //     subjects: subjects
+            // };
+            // xhttp.send(JSON.stringify(enrollParams));
             
         
            // window.location = "../Webpage/mainpage.html";
 
             
  }
-
-
