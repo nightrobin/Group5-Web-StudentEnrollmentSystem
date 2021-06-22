@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background-color: black;
+    font-family: "Montserrat" , sans-serif;
+
+}
+
+.login-header{
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    padding: 30px 10%;
+    }
+
+h2{
+    color: white;
+    font-style: italic;
+    margin-top: -50px;
+    padding-left: 120px;
+    position: fixed;
+}
+
+.Llogo {
+    position: fixed;
+    margin-top: -35px;
+    padding-bottom: -15px;
+    margin-left: -40px;
+    margin-right: auto;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+ }
+
+.Lwrapper{
+    max-width: 500px;
+    width: 100%;
+    background: none;
+    margin: 20px auto;
+    padding: 30px;
+    border: 3px solid white;
+}
+
+.Lwrapper .Ltitle{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: white;
+    text-align: center;
+}
+
+.Lwrapper .Lform{
+    background: none;
+    width: 100%;
+}
+
+.Lwrapper .Lform .Linput_field{
+    margin-bottom: 15px;
+    background: none;
+    align-items: center;  
+}
+
+.Lwrapper .Lform .Linput_field label{
+    
+    color: white;
+    width: 200px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.Lwrapper .Lform .Linput_field .Linput{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: 2px solid white;
+    font-size: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    background: none;
+    color:white;
+    
+}
+
+.Lwrapper .Lform .Linput_field .input:focus,
+.Lwrapper .Lform .Linput_field .textarea:focus,
+.Lwrapper .Lform .Linput_field select:focus{
+    border: 1px solid #5D5D5D;
+}
+
+.Linput_field{
+    margin-bottom: 15px;
+    display: flex;
+    background: none;
+    align-items: center;
+    text-indent: 10px;
+    text-align: justify;
+}
+
+.Lwrapper .Lform .Linputfield{
+    margin-bottom: 15px;
+    display: flex;
+    background: none;
+    align-items: center;
+    text-indent: 10px;
+    text-align: justify;
+}
+
+
+.Lwrapper .Lform .Linput_field .btn{
+    
+    margin-bottom: 15px;
+    width: 110%;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 3px solid white;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.Lwrapper .Lform .Linput_field:last-child{
+    margin-bottom: 0;
+} 
+
+.Lwrapper .Lform .Linput_field .btn:hover{
+    background: #888888;
+}
+
+.sectionL{
+    padding-top: 100px;
+    background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+    url(scheduleBg.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #042331;
+    transition: all .5s ease;
+}
+
+.sidebar header{
+    font-size: 20px;
+    padding-bottom: 30px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background: #063146;
+    user-select: none;
+}
+
+
+h1{
+    padding-top: 0px;
+    font-size: 70px;
+    text-align: center;
+    color:white;
+}
+
+h3{
+    padding-right: 20px;
+    margin-top: -10px;
+}
+
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: white;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1p solid black;
+}
+
+ul li:hover a{
+    padding-left: 50px;
+    transition: .4s;
+}
+
+.sidebar ul a i{
+    margin-right: 15px;
+
+}
+
+#check{
+    display: none;
+}
+
+label #btn, label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #042331;
+    border-radius: 3px;
+}
+
+label #btn{
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+   
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancel{
+    left: 195px;
+}
+
+.Savatar{
+    margin-left: -60px; 
+    margin-bottom: -90px;
+    margin-top: -120px;
+}
+ 
+.Soutputs{
+    
+    border: 3px solid white; 
+    max-width: 600px;
+    width: 100%;
+    background: none;
+    margin: 100px auto ;
+    padding: 30px;
+}
+
+.Soutputs .Scontent{
+  
+    margin: 10px;
+    text-align: center;
+    color: white;
+}
+
+.Soutputs .Scontent #defaultEnrollmentStatus{
+    color: green;
+}
+
+.Stitle h1{
+    padding-top: 100px;
+    margin-bottom: -90px;
+    font-size: 40px;
+    text-align: center;
+    color:white;
+}
+
+.schedule-content{
+    padding-top: 80px;
+    margin-left: 350px;
+    color: white;
+}
+
+.Schedtable{
+    border-spacing: 5px;
+    border-collapse: separate;
+   
+}
+
+.schedule-content th{
+    width: 100px;
+    padding: 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.schedule-content td{
+    padding: 15px;
+    border: 2px solid white;
+
+}
+
+.above-table-details{
+    color: white;
+     text-align:center;
+ }
+ 
+ .above-table-details > div{
+     margin-bottom: 50px;
+     height: 150px;
+     background: none;
+ }
+ 
+ .left-side{
+     width: 300px;
+     float:left;
+     margin-left: 400px;
+     margin-top: 20px;
+     text-align: left;
+     
+ }
+ 
+ .center-part{
+     width: 440px;
+     display:inline-block;
+     margin-top: 20px;
+     margin-right: 0;
+     margin-left: 0;
+ }
+ 
+ .right-side{
+     width: 300px;
+     float: right;
+     margin-right: 237px;
+     margin-top: 20px;
+ }
+ 
+ #studentCopy{
+     border: 2px solid white;
+ }
+ 
+ .contentType{
+     display: inline-block;
+     border: 1px solid white;
+ }
+ 
+ 
+ .contentReg{
+     display: inline-block;
+     border: 1px solid white;
+ }
+ 
+ #defaultStudentType{
+     width: 112.9px;
+ }
+ 
+ #getType{
+     width: 136px;
+ }
+ 
+ .inside-table-information .content{
+     
+     border: 1px solid white;
+ }
+ 
+ .Sschedule-content{
+     color: white;
+ }
+ 
+ .Stable{
+     width: 1270px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+ 
+ .Sschedule-content th{
+     margin-top: -500px;
+     padding-top: -500px;
+     width: 100px;
+     padding: 15px;
+     border: 2px solid white;
+    
+ }
+
+ .contentU h1{
+    width: 1000px;
+    padding-top: 200px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 60px;
+    text-align: center;
+    color:white;
+}
+
+.contentU h2{
+    font-family: "garamond";
+    font-size: 15px;
+    text-align: center;
+    color:white;
+}
+
+.wrapper{
+    max-width: 500px;
+    width: 100%;
+    background: none;
+    padding: 30px;
+    border: 3px solid #ffffff;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.wrapper .Utitle{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.wrapper .form{
+    background: none;
+    width: 100%;
+}
+
+.wrapper .form .input_field{
+    margin-bottom: 15px;
+    background: none;
+    align-items: center;  
+}
+
+.wrapper .form .input_field label{
+    
+    color: white;
+    width: 200px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.wrapper .form .input_field .input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: 2px solid white;
+    font-size: 8px 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    background: none;
+    color:white;
+}
+
+.wrapper .form .input_field .btn{
+    
+   
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 3px solid white;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.Ubutton{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 3px solid white;
+    background: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.wrapper .form .input_field .btn:hover{
+    background: #888888;
+}
+
+.Ubutton:hover{
+    background: #888888;
+}

@@ -1,126 +1,139 @@
+//===========================================REGISTER========================================================
 const defaultValue = 1;
 console.log("HEHEH");
 
-    var email = document.getElementById("_email").value;
-    var password = document.getElementById("_password").value;
-    var firstname = document.getElementById("_firstname").value;
-    var middlename = document.getElementById("_middlename").value;
-    var lastname = document.getElementById("_lastname").value;
-    var studentNumber = "";
 
-    
-    function getButton(){
-        const xhttp = new XMLHttpRequest();
-    
-        xhttp.onload = function() {
-            var content = "";
-            var obj = JSON.parse(this.responseText);
-            console.log(obj);
-            
+var _email = document.getElementById("_email");
+var _password = document.getElementById("_password");
+var _confirmPassword = document.getElementById("_confirmPassword");
+var _firstname = document.getElementById("_firstname");
+var _middlename = document.getElementById("_middlename");
+var _lastname = document.getElementById("_lastname");
+var _studentNumber = "";
+var _course;
+var _courseCode = "";
+var _subjects = [];
+console.log("TRYY");
 
-            document.getElementById("he").innerHTML= obj.message.last_name;
-            
-        }
+    var email = _email.value;
+    var password = _password.value;
+    var confirmPass = _confirmPassword.value;
+    var firstname = _firstname.value;
+    var middlename = _middlename.value;
+    var lastname = _lastname.value;
+
+
+function register(){
     
-        // Send a request
-        xhttp.open("GET", "http://localhost:8000/user/2021-00001", true);
-        xhttp.send();
+    email = _email.value;
+    firstname = _firstname.value;
+    middlename = _middlename.value;
+    lastname = _lastname.value;
+    password = _password.value;
+    confirmPass = _confirmPassword.value;
+    console.log(password);
+    console.log(confirmPass);
+    
+    if(password === confirmPass){
+        
+    course = document.getElementById("course");
+    var strUser = course.value;
+
+    if(strUser == "BSIT"){
+        courseCode = "BSIT"
+        subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010", "CET 0121",
+         "NSTP 02", "EIT 0122", "ICC 0103.1", "ICC 0103"]
+
+    } else if(strUser == "BSCE"){
+        courseCode = "BSCE"
+        subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010", "CIV 0121.1",
+    "CET 0122A", "CET 0121", "NSTP 02", "EIT 0122"]
+    } 
+    
+    else {
+        courseCode = "BSCS"
+        subjects = ["PED 0012", "CET 0122A", "CET 0121", "NSTP 02",
+     "CET 0121", "EIT 0122", "UTS 0003", "CIV 0121.1", "ICC 0103"]
+    };
+
+    if(email == "" || password == "" || firstname == "" || middlename == "" || lastname == "" || strUser == "none"){
+        var tempV = document.getElementById("validate").innerHTML = "Fill Up whole input field";
+    }
+    else{
+        enrollStudent();
     }
 
-// function validateForms(){
-//     if(email == "" && password == "" && firstname == "" && middlename == "" && lastname == ""){
-//         alert("Name must be filled out");
-//     }
-//     else{
-//         enrollStudent();
-//     }
-//   }
-    
+}
+else{
+    var tempV = document.getElementById("validate").innerHTML = "Password Does not Match";
+}
 
-    function enrollStudent(){
-   
-    // var course = document.getElementById("course");
-    // var strUser = course.value;
-    //     console.log(strUser);
-       
-    //     var studentNumber = "";
-    //     var courseCode = "";
-    //     var subjects = [];
+}
+function enrollStudent(){
+        // Create an XMLHttpRequest object
+        const xhttp = new XMLHttpRequest();
 
-    // if(strUser == "BSIT"){
-        
-    //     courseCode = "BSIT"
-    //     subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010", "CET 0121",
-    //      "NSTP 02", "EIT 0122", "ICC 0103.1", "ICC 0103"]
+        // Define a callback function
+        xhttp.onload = function() {
+            var obj = JSON.parse(this.responseText);
+           console.log(obj);
 
-    // } else if(strUser == "BSCE"){
-    //     courseCode = "BSCE"
-    //     subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010", "CIV 0121.1",
-    // "CET 0122A", "CET 0121", "NSTP 02", "EIT 0122"]
-    // } 
-    
-    // else {
-    //     courseCode = "BSCS"
-    //     subjects = ["PED 0012", "EIT 0121.1", "PCM 0006", "IPP 0010",
-    //  "CET 0121", "NSTP 02", "EIT 0122", "ICC 0103.1", "ICC 0103"]
-    // };
+            if (obj.status_code == "SUCCESS"){
+                studentNumber = obj.message.student_number;
+                enrollCourse();
+                tempV = document.getElementById("validate").innerHTML = "Register Successfully"
+            }
+            else{
+                tempV = document.getElementById("validate").innerHTML = "Duplicate Email"
+            }
+
+        }
+
+        // Send a request with parameters
+        xhttp.open("POST", "http://localhost:8000/user/create", true);
+        xhttp.setRequestHeader('Content-Type', 'application/json');
+        var params = {
+            email: email,
+            password: password,
+            first_name: firstname,
+            middle_name: middlename,
+            last_name: lastname,
+            is_student: defaultValue,
+            year_level: defaultValue
+        };
+        xhttp.send(JSON.stringify(params));
+}
+
+function enrollCourse(){
       
-       
-    
-    //  Create an XMLHttpRequest object
+    //Create an XMLHttpRequest object
        const xhttp = new XMLHttpRequest();
-
-       console.log(password);
 
         // Define a callback function
         xhttp.onload = function() {
             var content = "";
             var obj = JSON.parse(this.responseText);
             console.log(obj);
+            studentNumber = obj.message.student_number;
 
             if (obj.status_code == "SUCCESS"){
-                // window.location = "../Webpage/mainpage.html";
-                console.log("Success");
+                window.location.href = "./SES.html";
                 }
                 else{
-                    console.log("failed");
+                    alert(
+                        "FAILED");
                 }
-    
             
-            }
-
-            
-    
-             // Send a request with parameters
-            xhttp.open("POST", "http://localhost:8000/user/create", true);
+        }
+            // Send a request with parameters
+            xhttp.open("POST", "http://localhost:8000/enrollment/create", true);
             xhttp.setRequestHeader('Content-Type', 'application/json');
-            var params = {
-                email: email,
-                password: password,
-                first_name: firstname,
-                middle_name: middlename,
-                last_name: lastname,
-                is_student: defaultValue,
-                year_level: defaultValue
+            var enrollparams = {
+                student_number: studentNumber,
+                course_code: courseCode,
+                subjects: subjects
             };
-            xhttp.send(JSON.stringify(params));
-          
+            xhttp.send(JSON.stringify(enrollparams));
+}
 
-            // xhttp.open("GET", "http://localhost:8000/user/2021-00001", true);
-            // xhttp.send();
-            
-           
-            // xhttp.open("POST", "http://localhost:8000/enrollment/create", true);
-            // xhttp.setRequestHeader('Content-Type', 'application/json');
-            // var enrollParams = {
-            //     student_number: obj.message.student_number //error-part,
-            //     course_code: courseCode,
-            //     subjects: subjects
-            // };
-            // xhttp.send(JSON.stringify(enrollParams));
-            
-        
-           // window.location = "../Webpage/mainpage.html";
 
-            
- }

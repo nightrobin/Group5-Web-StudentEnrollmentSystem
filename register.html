@@ -6,35 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 
+    <link rel="stylesheet" href="styles/register.css">
 
-    <link rel="stylesheet" href="css/register.css">
-    link
 </head>
 <body>
+<Section>
     <header>
-        <img src="/Webpage/css/photos/eagle_white.png" alt="logo" class="logo">
+        <img src="styles/eagle_white.png" alt="eagle_white" class="logo">
     </header>
+    <h2>HARIBON</h2>
 
     <div class="title">
-        <h1>StUDENT ENROLLMENT FORM</h1>
+        <h1>STUDENT ENROLLMENT FORM</h1>
+        
     </div>
-    <div class="wrapper">
+    <div class="wrapper" id="update">
+        
         <form action="" class="form">
-
+            <center><label><div id="validate"></div></center>
             <div class="input_field">
                 <label for="email">Email</label>
-                <input type="text" placeholder="Please Enter Email" name="email" required id="_email" class="input">
+                <input type="text" placeholder="Please Enter Email" name="email" required id="_email"  class="input">
             </div> 
-
             
             <div class="input_field">
-                <label for="email">Password</label>
-                <input type="text" placeholder="Please Enter Email" name="email" required id="_password" class="input">
-            </div> 
+                <label for="password">Password</label>
+                <input type="password" placeholder="Please Enter Password" name="password" required id="_password" class="input">
+            </div>
+            
+            <div class="input_field">
+                <label for="password">Confirm Password</label>
+                <input type="password" placeholder="Please Enter Password" name="password" required id="_confirmPassword" class="input">
+            </div>
 
             <div class="input_field">
                 <label for="firstname">First Name</label>
-                <input type="text" placeholder="Please Password" name="firstname" required id="_firstname" class="input">
+                <input type="text" placeholder="Please Enter First Name" name="firstname" required id="_firstname" class="input">
             </div>
             
             <div class="input_field">
@@ -50,26 +57,25 @@
             <div class = "input_field">
                 <label>Select Course</label>
                 <div class = "custom_select">
-                        <select name="dropdown" onchange="selectCourse()" required>
-                            <option  disabled selected value> Select </option>
+                        <select name="dropdown" id="course" required>
+                            <option  disabled selected value="none"> Select </option>
                             <option value = "BSIT"> Bachelor of Science in Information Technology </option>
                             <option value = "BSCS"> Bachelor of Science in Computer Science </option>
                             <option value = "BSCE"> Bachelor of Science in Computer Engineering  </option>
                         </select>
                 </div>
             </div>
-
-            <div class = "input_field">
-                <input type="submit" value="Register" class = "btn" >
-            </div>
-
-            <button type="button" onclick="enrollStudent()">Post Button</button>
-            <button type="button" onclick="getButton()">Get Button</button>
-            <div id="he"></div>
-
+           
+            
+       
         </form>
+        <div class="input_field"></div>
+        <button type="submit" class="btn" onclick="register();">Register</button></div>
+       
     </div>
+
+    <script src="scripts/register.js"></script>
 </body>
-<script src = "scripts/register.js"></script>
+<!-- <script src = "scripts/register.js"></script> -->
 </html>
 

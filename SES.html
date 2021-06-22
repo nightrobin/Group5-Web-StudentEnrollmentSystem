@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT PORTAL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href ="styles/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+</head>
+<body>
+<section class="sectionL">
+<div id="login-page">
+        <header class="login-header">
+            <img class = "Llogo" src = "styles/eagle_white.png" alt = "logo">
+        </header>
+<div class="login">
+
+    <div class = Lwrapper>
+        <div class = "Ltitle">
+           STUDENT PORTAL
+        </div>
+
+        <div class = "Lform">
+            <div class = "Linput_field">
+                <label>Email</label>
+                <input type = "text" class = "Linput" required id="_email">
+            </div>
+        </div>
+
+        <br>
+
+        <div class = "Lform">
+            <div class = "Linput_field">
+                <label>Password</label>
+                <input type = "password" class = "Linput" required id="_password">
+            </div>
+        </div>
+
+        <br>
+
+        <div class = "Linput_field">
+           <button style = "margin-bottom: 15px;
+           width: 100%;
+           padding: 8px 10px;
+           font-size: 15px;
+           border: 3px solid white;
+           background: none;
+           color: white;
+           cursor: pointer;
+           border-radius: 3px;
+           outline: none;"type= "button" class="btn" onclick ="tryLogin()">Login</button>
+
+           
+           <a href ="register.html" style="display: block;">
+            <button style ="margin-bottom: 15px;
+            width: 100%;
+            padding: 8px 10px;
+            font-size: 15px;
+            border: 3px solid white;
+            background: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 3px;
+            outline: none;"type= "button" class="btn">Register</button>
+            </a>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="side-bar">
+    <input type = "checkbox" id = "check">
+    <label for = "check">
+        <i class = "fa fa-bars" id = "btn"></i>
+        <i class = "fa fa-close" id = "cancel"></i>
+    </label>
+    
+    <div class = "sidebar">
+        <header> <img class = "Llogo" src = "styles/eagle_white.png" alt = "logo"></header>
+        <ul style="display: block;
+        height: 100%;
+        width: 100%;
+        line-height: 65px;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: white;
+        padding-top: 15px;
+        margin-bottom: 15px;
+        padding-left: 20px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(255, 255, 255, .1);
+        border-bottom: 1p solid black;">
+            <li id ="Student-Information-Page-Button"><i class = "fa fa-drivers-license-o" ></i>Student Information</li>
+            <li id = "Schedule-Page-Button"><i class = "fa fa-table" ></i>Schedule</li>
+            <li id = "VIEW-SER-Button"><i class = "fa fa-list-alt" ></i>SER Form</li></a>
+            <li id = "viewUpdate"><i class = "fa fa-pencil-square-o" ></i>Update Student Info</li>
+            <li><a href = "SES.html"><i class = "fa fa-power-off" id = "logOut"></i>Log out</a></li>  
+        </ul>
+    </div>
+    <div id="main-page"><section> <h1 style="padding-top: 0px;
+        font-size: 70px;
+        text-align: center;
+        color:white;">Mag-aral tayo tulad ni Rizal</h1> </section></div>
+</div>
+
+<div id="Student-Information-Content">
+
+    <div class = "Ssection">
+        <section>
+            <div class="Stitle">
+                <h1 class="textTitle">STUDENT INFORMATION</h1>
+            </div>
+    
+            <div class="Soutputs">
+                <div class = "Savatar">
+                    <img src="styles/Avatar.png" alt="avatar">
+                </div>
+    
+                <div class="Scontent">
+                    <div class="firstname">First Name:</div>
+                    <div id = "getFirstName">(INPUT)</div>
+                </div>
+    
+                <div class="Scontent">
+                    <div class="middlename">Middle Name:</div>
+                    <div id = "getMiddleName">(INPUT)</div>
+                </div>
+    
+                <div class="Scontent">
+                    <div class="lastname">Last Name:</div>
+                    <div id = "getLastName">(INPUT)</div>
+                </div>
+
+                <div class="Scontent">
+                    <div class="lastname">Email:</div>
+                    <div id = "getEmail">(INPUT)</div>
+                </div>
+                
+                <div class="Scontent">
+                    <div class="studentnumer">Student Number:</div>
+                    <div id = "getStudentNum">(INPUT)</div>
+                </div>
+
+                <div class="Scontent">
+                    <div class="studentnumer">Student Number:</div>
+                    <div id = "getControlNum">(INPUT)</div>
+                </div>
+
+                <div class="Scontent">
+                    <div class="course">Course:</div>
+                    <div id = "getCourse">(INPUT)</div>
+                </div>
+                
+                <div class="Scontent">
+                    <div class="yearlevel">Year Level:</div>
+                    <div id = "getYearLevel">(INPUT)</div>
+                </div>
+    
+                <div class="Scontent">
+                    <div class="enrollmentype">Type:</div>
+                    <div id = "getEnrollmentStatus">(INPUT)</div>
+                </div>
+    
+                <div  class= "Scontent">
+                    <div class="enrollmentStatus">Enrollment Status:</div>
+                    <div id = "defaultEnrollmentStatus">Officially Enrolled</div>
+                </div>
+            </div>
+            </section>
+            </div>
+
+</div>
+
+<div class="schedule-content"  id="schedule-content">
+        <table class="Schedtable">
+            <tr>
+              <th>Subject Code</th>
+              <th>Title</th>
+              <th>Units</th>
+              <th>Time</th>
+              <th>Day</th>
+              <th>Room</th> 
+            </tr>
+            <div id="row1">
+                <tr>
+                    <td id="r1code">test</td>
+                    <td id="r1title">test</td>
+                    <td id="r1unit">test</td>
+                    <td id="r1time">test</td>
+                    <td id="r1day">test</td>
+                    <td id="r1room">test</td>
+                </tr>
+            </div>
+
+            <div id="row2">
+                <tr>
+                    <td id="r2code">test</td>
+                    <td id="r2title">test</td>
+                    <td id="r2unit">test</td>
+                    <td id="r2time">test</td>
+                    <td id="r2day">test</td>
+                    <td id="r2room">test</td>
+                </tr>
+            </div>
+
+            <div id="row3">
+                <tr>
+                    <td id="r3code">test</td>
+                    <td id="r3title">test</td>
+                    <td id="r3unit">test</td>
+                    <td id="r3time">test</td>
+                    <td id="r3day">test</td>
+                    <td id="r3room">test</td>
+                </tr>
+            </div>
+
+            <div id="row4">
+                <tr>
+                    <td id="r4code">test</td>
+                    <td id="r4title">test</td>
+                    <td id="r4unit">test</td>
+                    <td id="r4time">test</td>
+                    <td id="r4day">test</td>
+                    <td id="r4room">test</td>
+                </tr>
+            </div>
+            <div id="row5">
+                <tr>
+                    <td id="r5code">test</td>
+                    <td id="r5title">test</td>
+                    <td id="r5unit">test</td>
+                    <td id="r5time">test</td>
+                    <td id="r5day">test</td>
+                    <td id="r5room">test</td>
+                </tr>
+            </div>
+
+            <div id="row6">
+                <tr>
+                    <td id="r6code">test</td>
+                    <td id="r6title">test</td>
+                    <td id="r6unit">test</td>
+                    <td id="r6time">test</td>
+                    <td id="r6day">test</td>
+                    <td id="r6room">test</td>
+                </tr>
+            </div>
+            
+            <div id="row7">
+                <tr>
+                    <td id="r7code">test</td>
+                    <td id="r7title">test</td>
+                    <td id="r7unit">test</td>
+                    <td id="r7time">test</td>
+                    <td id="r7day">test</td>
+                    <td id="r7room">test</td>
+                </tr>
+            </div>
+
+            <div id="row8">
+                <tr>
+                    <td id="r8code">test</td>
+                    <td id="r8title">test</td>
+                    <td id="r8unit">test</td>
+                    <td id="r8time">test</td>
+                    <td id="r8day">test</td>
+                    <td id="r8room">test</td>
+                </tr>
+            </div>
+
+            <div id="row9">
+                <tr>
+                    <td id="r9code">test</td>
+                    <td id="r9title">test</td>
+                    <td id="r9unit">test</td>
+                    <td id="r9time">test</td>
+                    <td id="r9day">test</td>
+                    <td id="r9room">test</td>
+                </tr>
+            </div>
+    </table>
+</div>
+
+<div class="SER-form" id="view-SER">
+    <div class="above-table-details">
+        <div class="left-side">
+            <p><b>Haribon Bonabie University</b></p>
+            <p>68419 Shiganshina District. </p>
+            <p>Wall Maria, Paradis</p>
+        </div>
+        
+        <div class="center-part">
+            <p><b>STUDENT ENROLLMENT RECORD</b></p>
+            <p>2nd Semester&emsp;   School Year&emsp;     2020-2021</p>
+        </div>
+
+        <div class="right-side">
+            <div id = "studentCopy">
+            <p>STUDENTS COPY</p>
+            </div>
+    </div>
+
+    <div class="inside-table-information">
+        <div class="outputs">
+            <div class="left-side">
+            <div class="content">
+                <div class="studentnumber">Student Number</div>
+                <div id = "sgetStudentNum">(INPUT)</div>
+            </div>
+            <div class="content">
+                <div class="college">College</div>
+                <div id = "collge">CET</div>
+            </div>
+
+            <div class="center-part">
+            <div class="content">
+                <div class="firstname">Student Name</div>
+                <div id = "sgetStudentName">(INPUT)</div>
+            </div>
+            <div class="content">
+                <div class="course">Course</div>
+                <div id = "sgetCourse">(INPUT)</div>
+            </div>
+            </div>
+    
+                
+            
+            <div class="right-side">
+            <div class="contentType">
+                <div class="contentType"">
+
+                    <div class="studenttype">Student Type</div>
+                    <div id = "">New</div>
+                </div>
+
+                <div class="contentType">
+                    <div class="yearlevel">Year Level</div>                        
+                    <div id = "sgetYearLevel">1</div>
+                </div>
+                <div class="contentType">
+                    <div class="controlNumber">Control Number</div>
+                    <div id = "sgetControlNum">(INPUT)</div>
+                </div>
+
+                <div class="contentType"">
+                    <div class="enrollmentype">Type</div>
+                    <div id = "">B</div>
+                </div>
+    
+            <div class="contentReg">
+                <div class="registration Status">Registration Status</div>
+                <div id = "">Regular</div>
+            </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="Sschedule-content">
+        <table class=".Stable">
+                <tr>
+                  <th>Subject Code</th>
+                  <th>Title</th>
+                  <th>Units</th>
+                  <th>Time</th>
+                  <th>Day</th>
+                  <th>Room</th> 
+                </tr>
+                <div id="row1">
+                    <tr>
+                        <td id="sr1code">test</td>
+                        <td id="sr1title">test</td>
+                        <td id="sr1unit">test</td>
+                        <td id="sr1time">test</td>
+                        <td id="sr1day">test</td>
+                        <td id="sr1room">test</td>
+                    </tr>
+                </div>
+
+                <div id="row2">
+                    <tr>
+                        <td id="sr2code">test</td>
+                        <td id="sr2title">test</td>
+                        <td id="sr2unit">test</td>
+                        <td id="sr2time">test</td>
+                        <td id="sr2day">test</td>
+                        <td id="sr2room">test</td>
+                    </tr>
+                </div>
+
+                <div id="row3">
+                    <tr>
+                        <td id="sr3code">test</td>
+                        <td id="sr3title">test</td>
+                        <td id="sr3unit">test</td>
+                        <td id="sr3time">test</td>
+                        <td id="sr3day">test</td>
+                        <td id="sr3room">test</td>
+                    </tr>
+                </div>
+
+                <div id="row4">
+                    <tr>
+                        <td id="sr4code">test</td>
+                        <td id="sr4title">test</td>
+                        <td id="sr4unit">test</td>
+                        <td id="sr4time">test</td>
+                        <td id="sr4day">test</td>
+                        <td id="sr4room">test</td>
+                    </tr>
+                </div>
+                <div id="row5">
+                    <tr>
+                        <td id="sr5code">test</td>
+                        <td id="sr5title">test</td>
+                        <td id="sr5unit">test</td>
+                        <td id="sr5time">test</td>
+                        <td id="sr5day">test</td>
+                        <td id="sr5room">test</td>
+                    </tr>
+                </div>
+
+                <div id="row6">
+                    <tr>
+                        <td id="sr6code">test</td>
+                        <td id="sr6title">test</td>
+                        <td id="sr6unit">test</td>
+                        <td id="sr6time">test</td>
+                        <td id="sr6day">test</td>
+                        <td id="sr6room">test</td>
+                    </tr>
+                </div>
+                
+                <div id="row7">
+                    <tr>
+                        <td id="sr7code">test</td>
+                        <td id="sr7title">test</td>
+                        <td id="sr7unit">test</td>
+                        <td id="sr7time">test</td>
+                        <td id="sr7day">test</td>
+                        <td id="sr7room">test</td>
+                    </tr>
+                </div>
+
+                <div id="row8">
+                    <tr>
+                        <td id="sr8code">test</td>
+                        <td id="sr8title">test</td>
+                        <td id="sr8unit">test</td>
+                        <td id="sr8time">test</td>
+                        <td id="sr8day">test</td>
+                        <td id="sr8room">test</td>
+                    </tr>
+                </div>
+
+                <div id="row9">
+                    <tr>
+                        <td id="sr9code">test</td>
+                        <td id="sr9title">test</td>
+                        <td id="sr9unit">test</td>
+                        <td id="sr9time">test</td>
+                        <td id="sr9day">test</td>
+                        <td id="sr9room">test</td>
+                    </tr>
+                </div>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div id="Update">
+    <div class="wrapper">
+
+        <form action="" class="form">
+            
+            <div class = "Utitle">
+                <header>UPDATE</header>
+            </div>
+
+            <div id="validate" style="color: white; font-size: medium;"></div>
+            
+            <div class="input_field">
+                <label for="email">Email</label>
+                <input type="text" placeholder="Please Enter Email" name="email" required id="_Xemail" class="input">
+            </div> 
+            
+            <div class="input_field">
+                <label for="password2">Confirm Password</label>
+                <input type="password" placeholder="Please Enter Password" name="password2" required id="_confirmPassword" class="input">
+            </div> 
+
+            <div class="input_field">
+                <label for="firstname">First Name</label>
+                <input type="text" placeholder="Please Password" name="firstname" required id="_firstname" class="input">
+            </div>
+            
+            <div class="input_field">
+                <label for="middlename">Middle Name</label>
+                <input type="text" placeholder="Please Enter Middle Name (type _ if no middle name)" name="middlename" required id="_middlename" class="input">
+            </div>
+
+            <div class="input_field">
+                <label for="lastname">Last Name</label>
+                <input type="text" placeholder="Please Enter Last Name" name="lastname" required id="_lastname" class="input">
+            </div>
+
+            <button class = "Ubutton btn"type="button" onclick="update()">Update</button>
+        </form>
+    </div>
+</div>
+
+
+<script src="scripts/script.js"></script>
+<script
+			  src="https://code.jquery.com/jquery-3.6.0.min.js"
+			  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			  crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        
+
+        $.viewMainPage = function(){
+                $("#main-page").show();
+                $("#side-bar").show();
+                $("#login-page").hide();
+        }
+
+        $("#Schedule-Page-Button").click(function(){
+            $("#Student-Information-Content").hide();
+            $("#view-SER").hide();
+            $("#updateConfirm").hide();
+            $("#main-page").hide();
+            $("#schedule-content").show();
+            viewSchedule();
+        });
+        
+        $("#Student-Information-Page-Button").click(function(){
+            $("#schedule-content").hide();
+            $("#view-SER").hide();
+            $("#Update").hide();
+            $("#main-page").hide();
+            $("#Student-Information-Content").show();
+            StudentInformation();
+        });
+
+        $("#VIEW-SER-Button").click(function(){
+            $("#schedule-content").hide();
+            $("#Student-Information-Content").hide();
+            $("#main-page").hide();
+            $("#Update").hide();
+            $("#view-SER").show();
+            SERInformation();
+        });
+
+        $("#viewUpdate").click(function(){
+            $("#schedule-content").hide();
+            $("#Student-Information-Content").hide();
+            $("#main-page").hide();
+            $("#view-SER").hide();
+            $("#Update").show();
+        });
+
+        $("#side-bar").hide();
+        $("#main-page").hide();
+        $("#login-page").show();
+        $("#schedule-content").hide();
+        $("#Student-Information-Content").hide();
+        $("#view-SER").hide();
+        $("#updateConfirm").hide();
+        $("#Update").hide();
+    });
+</script>
+
+</script>
+</body>
+</html>
