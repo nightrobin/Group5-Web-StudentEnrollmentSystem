@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href = "login.css">
+    
+</head>
+<body>
+
+    <section>
+        <header>
+            <img class = "logo" src = "eagle_white.png" alt = "logo">
+        </header>
+        <h2>HARIBON</h2>
+
+        <div class = wrapper>
+            <div class = "title">
+                STUDENT PORTAL
+            </div>
+
+        <div class = "form">
+            <div class = "input_field">
+                <label>Email</label>
+                <input type = "text" class = "input">
+            </div>
+
+
+        <div class = "form">
+            <div class = "input_field">
+                <label>Password</label>
+                <input type = "text" class = "input">
+            </div>
+        </div>
+        <br>
+        <div class = "input_field">
+            
+            <a href = "view-mainpage.html">
+           <button type= "button" class="btn" onclick ="tryLogin()">Login</button>
+           </a>
+           
+            <a href ="register.html" style="display: block;">
+            <button type= "button" class="btn">Register</button>
+            </a>
+
+        </div>
+
+        <div class = "inputfield terms">
+            <label class = "check">
+                <input type = "checkbox">
+                <span class = "checkmark"></span>
+            </label> <p id = "rmbr">Remember me</p>
+        <a href><p id = "frgt">Forgot your Password?</p></a>
+         </div>
+    </div>
+</section>
+
+    <script src="mainpage.js"></script>
+</body>
+</html>

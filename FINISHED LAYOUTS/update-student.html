@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="updateStudent.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <!-- <header>
+        <h1>NAME NG SCHOOL</h1>
+    </header> -->
+
+    <input type = "checkbox" id = "check">
+    <label for = "check">
+        <i class = "fa fa-bars" id = "btn"></i>
+        <i class = "fa fa-close" id = "cancel"></i>
+    </label>
+
+    
+    <div class = "sidebar">
+            <header>
+               <a href = "view-mainpage.html">
+                <img class = "logo" src = "eagle_white.png" alt = "logo"></a><h3>HARIBON</h3>
+            </header>
+            
+            <ul>
+                <li><a href = "view-studentInfo.html"><i class = "fa fa-drivers-license-o" id = "studentInfo"></i>Student Information</a></li>
+                <li><a href = "view-schedule.html"><i class = "fa fa-table" id = "schedule"></i>Schedule</a></li>
+                <li><a href = "view-SER.html"><i class = "fa fa-list-alt" id = "serForm"></i>SER Form</a></li>
+                <li><a href = "view-updateInformation.html"><i class = "fa fa-pencil-square-o" id = "updateStudentInfo"></i>Update Student Info</a></li>
+                <li><a href = "mainpage.html"><i class = "fa fa-power-off" id = "logOut"></i>Log out</a></li>
+            </ul> 
+    </div>
+    
+<section>
+    <div class="wrapper">
+
+        <form action="" class="form">
+            
+            <div class = "title">
+                <header>UPDATE</header>
+            </div>
+            
+            <div class="input_field">
+                <label for="email">Email</label>
+                <input type="text" placeholder="Please Enter Email" name="email" required id="_email" class="input">
+            </div> 
+
+            
+            <div class="input_field">
+                <label for="email">Password</label>
+                <input type="text" placeholder="Please Enter Email" name="email" required id="_password" class="input">
+            </div> 
+
+            <div class="input_field">
+                <label for="firstname">First Name</label>
+                <input type="text" placeholder="Please Password" name="firstname" required id="_firstname" class="input">
+            </div>
+            
+            <div class="input_field">
+                <label for="middlename">Middle Name</label>
+                <input type="text" placeholder="Please Enter Middle Name (type _ if no middle name)" name="middlename" required id="_middlename" class="input">
+            </div>
+
+            <div class="input_field">
+                <label for="lastname">Last Name</label>
+                <input type="text" placeholder="Please Enter Last Name" name="lastname" required id="_lastname" class="input">
+            </div>
+
+            <div class = "input_field">
+                <label>Select Course</label>
+                <div class = "custom_select">
+                        <select name="dropdown" onchange="selectCourse()" required>
+                            <option  disabled selected value> Select </option>
+                            <option value = "BSIT"> Bachelor of Science in Information Technology </option>
+                            <option value = "BSCS"> Bachelor of Science in Computer Science </option>
+                            <option value = "BSCE"> Bachelor of Science in Computer Engineering  </option>
+                        </select>
+                </div>
+            </div>
+
+            <!-- <div class = "input_field">
+                <input type="submit" value="Register" class = "btn" >
+            </div> -->
+
+            <button type="button" onclick="updateStudent()">Update</button>
+        </form>
+    </div>
+ </section>
+</body>
+</html>

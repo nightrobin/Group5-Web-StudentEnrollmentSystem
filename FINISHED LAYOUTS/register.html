@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+    
+</head>
+<body>
+
+<Section>
+    <header>
+        <img class = "logo" src = "eagle_white.png" alt = "logo">
+    </header>
+    <h2>HARIBON</h2>
+
+    <div class="title">
+        <h1>STUDENT ENROLLMENT FORM</h1>
+    </div>
+    <div class="wrapper">
+        <form action="" class="form">
+
+            <div class="input_field">
+                <label for="email">Email</label>
+                <input type="text" placeholder="Please Enter Email" name="email" required id="_email" class="input">
+            </div> 
+
+            
+            <div class="input_field">
+                <label for="email">Password</label>
+                <input type="password" placeholder="Please Enter Password" name="email" required id="_password" class="input">
+            </div> 
+
+            <div class="input_field">
+                <label for="email">Confirm Password</label>
+                <input type="password" placeholder="Please Confirm Password" name="email" required id="_password" class="input">
+            </div>
+
+            <div class="input_field">
+                <label for="firstname">First Name</label>
+                <input type="text" placeholder="Please Enter Your First Name" name="firstname" required id="_firstname" class="input">
+            </div>
+            
+            <div class="input_field">
+                <label for="middlename">Middle Name</label>
+                <input type="text" placeholder="Please Enter Your Middle Name (type _ if no middle name)" name="middlename" required id="_middlename" class="input">
+            </div>
+
+            <div class="input_field">
+                <label for="lastname">Last Name</label>
+                <input type="text" placeholder="Please Enter Your Last Name" name="lastname" required id="_lastname" class="input">
+            </div>
+
+            <div class = "input_field">
+                <label>Select Course</label>
+                <div class = "custom_select">
+                        <select name="dropdown" onchange="selectCourse()" required>
+                            <option  disabled selected value> Select </option>
+                            <option value = "BSIT"> Bachelor of Science in Information Technology </option>
+                            <option value = "BSCS"> Bachelor of Science in Computer Science </option>
+                            <option value = "BSCE"> Bachelor of Science in Computer Engineering  </option>
+                        </select>
+                </div>
+            </div>
+
+            <div class = "input_field">
+
+               <input type="submit" value="Register" class = "btn" href = "mainpage.html">
+            
+            </div>
+
+        </form>
+    </div>
+</Section>
+
+
+</body>
+<script src = "scripts/register.js"></script>
+</html>
+
